@@ -1,4 +1,4 @@
 [
-  {"id":"group_ipa23","name":"IPa23","teacherIds":["teacher_001"],"studentIds":["student_001","student_002"]},
+  {"id":"group_ipa23","name":"IPa23","teacherIds":["teacher_001","demo_teacher_001"],"studentIds":["student_001","student_002","demo_student_001","demo_student_002","demo_student_003","demo_student_004","demo_student_005"]},
   {"id":"group_ipb23","name":"IPb23","teacherIds":["teacher_001"],"studentIds":["student_003"]}
 ]

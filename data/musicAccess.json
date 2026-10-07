@@ -1,0 +1,13 @@
+[
+  {
+    "studentId": "demo_student_001",
+    "acceptedRulesVersion": 1,
+    "acceptedAt": "2026-10-07T07:13:47.073Z",
+    "banUntil": null,
+    "banReason": "",
+    "severity": null,
+    "fineDue": 0,
+    "finePaidAt": null,
+    "updatedAt": "2026-10-07T07:13:47.073Z"
+  }
+]

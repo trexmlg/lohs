@@ -893,40 +893,48 @@ function StudentAttendance({ attendance }) {
           </div>
           <strong>{summary.percentage || 0}% attendance</strong>
         </div>
-        {lessons.map((record) => (
-          <article key={record.id}>
-            <span className={`student-history-icon ${record.status}`}>
-              {record.status === "present" ? (
-                <Check size={16} />
-              ) : record.status === "late" ? (
-                <Clock3 size={16} />
-              ) : record.status === "excused" ? (
-                <ShieldCheck size={16} />
-              ) : (
-                <UserX size={16} />
-              )}
-            </span>
-            <div>
-              <b>{record.title}</b>
-              <small>
-                {record.groupName} · {record.classroomName}
-                {record.deskCode
-                  ? ` · ${record.deskLabel || record.deskCode}`
-                  : ""}
-              </small>
-              {record.minutesLate > 0 && (
-                <span className="student-late-detail">
-                  Late by {record.minutesLate} minutes
-                </span>
-              )}
-            </div>
-            <time>{fmt(record.startsAt)}</time>
-            <span className={`attendance-status ${record.status}`}>
-              {record.status}
-            </span>
-          </article>
-        ))}
-        {!lessons.length && (
+        {lessons.length ? (
+          <div className="attendance-history-table-wrap">
+            <table className="attendance-history-table">
+              <thead>
+                <tr>
+                  <th>Datums</th>
+                  <th>Priekšmets</th>
+                  <th>Pārstunda</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {lessons.map((record) => (
+                  <tr key={record.id}>
+                    <td>
+                      <time>{fmt(record.startsAt)}</time>
+                    </td>
+                    <td>
+                      <div className="attendance-history-subject">
+                        <b>{record.title}</b>
+                        <small>
+                          {record.groupName}
+                          {record.classroomName
+                            ? ` · ${record.classroomName}`
+                            : ""}
+                        </small>
+                      </div>
+                    </td>
+                    <td>
+                      {record.minutesLate > 0 ? `${record.minutesLate} min` : "—"}
+                    </td>
+                    <td>
+                      <span className={`attendance-status ${record.status}`}>
+                        {record.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
           <div className="attendance-history-empty">
             <History size={27} />
             <h3>No attendance yet</h3>
