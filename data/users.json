@@ -1,12 +1,133 @@
 [
-  {"id":"teacher_001","role":"teacher","firstName":"Toms","lastName":"Skolotājs","email":"toms.ricards@vtdt.edu.lv","groupIds":["group_ipa23","group_ipb23"],"githubUsername":null,"deskplanUserId":null},
-  {"id":"student_001","role":"student","firstName":"Jānis","lastName":"Bērziņš","email":"janis@devtrack.local","groupIds":["group_ipa23"],"githubUsername":"janisdev","deskplanUserId":"dp_101"},
-  {"id":"student_002","role":"student","firstName":"Anna","lastName":"Kalniņa","email":"anna@devtrack.local","groupIds":["group_ipa23"],"githubUsername":"annakdev","deskplanUserId":"dp_102"},
-  {"id":"student_003","role":"student","firstName":"Mārtiņš","lastName":"Ozols","email":"martins@devtrack.local","groupIds":["group_ipb23"],"githubUsername":"martinso","deskplanUserId":"dp_103"},
-  {"id":"demo_teacher_001","role":"teacher","firstName":"Demo","lastName":"Teacher","email":"demo_teacher@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"},
-  {"id":"demo_student_001","role":"student","firstName":"Demo","lastName":"Student One","email":"demo1@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"},
-  {"id":"demo_student_002","role":"student","firstName":"Demo","lastName":"Student Two","email":"demo2@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"},
-  {"id":"demo_student_003","role":"student","firstName":"Demo","lastName":"Student Three","email":"demo3@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"},
-  {"id":"demo_student_004","role":"student","firstName":"Demo","lastName":"Student Four","email":"demo4@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"},
-  {"id":"demo_student_005","role":"student","firstName":"Demo","lastName":"Student Five","email":"demo5@devtrack.local","groupIds":["group_ipa23"],"githubUsername":null,"deskplanUserId":null,"passwordHash":"scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"}
+  {
+    "id": "teacher_001",
+    "role": "teacher",
+    "firstName": "Toms",
+    "lastName": "Skolotājs",
+    "email": "toms.ricards@vtdt.edu.lv",
+    "groupIds": [
+      "group_ipa23",
+      "group_ipb23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "mustChangePassword": false,
+    "updatedAt": "2026-10-07T11:35:03.191Z",
+    "passwordHash": "scrypt:74a8dd7126af2c32a8878a45e4bb6ef6:cfac790643966893194b48d5559af4616aa40f4dde992e7e03e7ecda7a2e6965431708eeb5324fd06e6dec4725fc380953085e5725d15bf21cc2743f35f296ab",
+    "passwordChangedAt": "2026-10-07T11:35:44.994Z"
+  },
+  {
+    "id": "student_001",
+    "role": "student",
+    "firstName": "Jānis",
+    "lastName": "Bērziņš",
+    "email": "janis@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": "janisdev",
+    "deskplanUserId": "dp_101"
+  },
+  {
+    "id": "student_002",
+    "role": "student",
+    "firstName": "Anna",
+    "lastName": "Kalniņa",
+    "email": "anna@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": "annakdev",
+    "deskplanUserId": "dp_102"
+  },
+  {
+    "id": "student_003",
+    "role": "student",
+    "firstName": "Mārtiņš",
+    "lastName": "Ozols",
+    "email": "martins@devtrack.local",
+    "groupIds": [
+      "group_ipb23"
+    ],
+    "githubUsername": "martinso",
+    "deskplanUserId": "dp_103"
+  },
+  {
+    "id": "demo_teacher_001",
+    "role": "teacher",
+    "firstName": "Demo",
+    "lastName": "Teacher",
+    "email": "demo_teacher@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  },
+  {
+    "id": "demo_student_001",
+    "role": "student",
+    "firstName": "Demo",
+    "lastName": "Student One",
+    "email": "demo1@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  },
+  {
+    "id": "demo_student_002",
+    "role": "student",
+    "firstName": "Demo",
+    "lastName": "Student Two",
+    "email": "demo2@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  },
+  {
+    "id": "demo_student_003",
+    "role": "student",
+    "firstName": "Demo",
+    "lastName": "Student Three",
+    "email": "demo3@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  },
+  {
+    "id": "demo_student_004",
+    "role": "student",
+    "firstName": "Demo",
+    "lastName": "Student Four",
+    "email": "demo4@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  },
+  {
+    "id": "demo_student_005",
+    "role": "student",
+    "firstName": "Demo",
+    "lastName": "Student Five",
+    "email": "demo5@devtrack.local",
+    "groupIds": [
+      "group_ipa23"
+    ],
+    "githubUsername": null,
+    "deskplanUserId": null,
+    "passwordHash": "scrypt:00112233445566778899aabbccddeeff:0d67b6b39c7082798d8e59eb46fbbf9606adc632d5b9daa4c3fd2bed74d4b5cccc95df7b6afb3fe6c44318bd14ac64c45b35dab969f459d644346f9cd02fc239"
+  }
 ]
