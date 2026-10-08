@@ -720,12 +720,12 @@ function OpenLessonModal({ classrooms, groups, onClose, onCreated }) {
 function StudentAttendance({ attendance }) {
   const { records = [] } = attendance || {};
   const [period, setPeriod] = useState("90");
+  const [subject, setSubject] = useState("all");
   const [referenceNow] = useState(() => Date.now());
-  const lessons = useMemo(() => {
-    const from =
-      period === "all" ? 0 : referenceNow - Number(period) * 86400000;
-    return records
-      .flatMap((record) => {
+  const allLessons = useMemo(
+    () =>
+      records
+        .flatMap((record) => {
         const statuses = record.lessonStatuses?.length
           ? record.lessonStatuses
           : [
@@ -739,16 +739,30 @@ function StudentAttendance({ attendance }) {
           ...lesson,
           id: `${record.id}:${lesson.lessonId || lesson.period || index}`,
           title: record.title || "Lesson",
+          subject: lesson.subject || record.subject || record.title || "Lesson",
           groupName: record.groupName,
           classroomName: record.classroomName,
           deskCode: record.deskCode,
           deskLabel: record.deskLabel,
           startsAt: lesson.startsAt || record.startsAt,
         }));
-      })
-      .filter((lesson) => new Date(lesson.startsAt).getTime() >= from)
-      .sort((a, b) => new Date(b.startsAt) - new Date(a.startsAt));
-  }, [period, records, referenceNow]);
+        })
+        .sort((a, b) => new Date(b.startsAt) - new Date(a.startsAt)),
+    [records],
+  );
+  const subjects = useMemo(
+    () => [...new Set(allLessons.map((lesson) => lesson.subject))].sort(),
+    [allLessons],
+  );
+  const lessons = useMemo(() => {
+    const from =
+      period === "all" ? 0 : referenceNow - Number(period) * 86400000;
+    return allLessons.filter(
+      (lesson) =>
+        new Date(lesson.startsAt).getTime() >= from &&
+        (subject === "all" || lesson.subject === subject),
+    );
+  }, [allLessons, period, referenceNow, subject]);
   const summary = useMemo(() => studentLessonSummary(lessons), [lessons]);
   const weeks = useMemo(
     () => studentAttendanceWeeks(lessons, referenceNow),
@@ -765,18 +779,34 @@ function StudentAttendance({ attendance }) {
             timetable lesson.
           </p>
         </div>
-        <label>
-          <span>Period</span>
-          <select
-            value={period}
-            onChange={(event) => setPeriod(event.target.value)}
-          >
-            <option value="30">Last 30 days</option>
-            <option value="90">Last 90 days</option>
-            <option value="365">School year</option>
-            <option value="all">All time</option>
-          </select>
-        </label>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <label>
+            <span>Period</span>
+            <select
+              value={period}
+              onChange={(event) => setPeriod(event.target.value)}
+            >
+              <option value="30">Last 30 days</option>
+              <option value="90">Last 90 days</option>
+              <option value="365">School year</option>
+              <option value="all">All time</option>
+            </select>
+          </label>
+          <label>
+            <span>Subject</span>
+            <select
+              value={subject}
+              onChange={(event) => setSubject(event.target.value)}
+            >
+              <option value="all">All subjects</option>
+              {subjects.map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
       </section>
       <section className="attendance-metrics">
         <AttendanceMetric
@@ -912,7 +942,7 @@ function StudentAttendance({ attendance }) {
                     </td>
                     <td>
                       <div className="attendance-history-subject">
-                        <b>{record.title}</b>
+                        <b>{record.subject}</b>
                         <small>
                           {record.groupName}
                           {record.classroomName
@@ -922,7 +952,7 @@ function StudentAttendance({ attendance }) {
                       </div>
                     </td>
                     <td>
-                      {record.minutesLate > 0 ? `${record.minutesLate} min` : "—"}
+                      {record.period ? `${record.period}. stunda` : "—"}
                     </td>
                     <td>
                       <span className={`attendance-status ${record.status}`}>

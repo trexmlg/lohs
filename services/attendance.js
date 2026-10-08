@@ -910,6 +910,7 @@ function recordDto(record, session, extra = {}) {
     const startsAt = timetableLesson?.startsAt || session.startsAt;
     return {
       ...lesson,
+      subject: timetableLesson?.subject || session.title || "Lesson",
       startsAt: iso(startsAt),
       endsAt: iso(timetableLesson?.endsAt || session.endsAt),
       minutesLate:
