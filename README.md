@@ -230,3 +230,28 @@ npm run build
 ```
 
 Then push/import the repository in Vercel, configure Vercel Blob and environment variables, and set the GitHub App callback/webhook URLs to the production domain.
+
+@Zirnis
+
+Skolēna Attendance skata uzlabošana
+
+Atbildīgais: Kristaps Videndorfs Branch: student-attendance Uzdevums: uzlabot esošo skolēna apmeklējuma skatu, lai skolēns vienkārši saprastu savu apmeklējumu un kavējumus.
+
+Jāizdara:
+
+Izpētīt esošo Attendance skatu un izmantotos datu avotus.
+Izveidot kompaktu vēstures tabulu: datums, priekšmets, pārstunda un apmeklējuma statuss.
+Pievienot filtrēšanu pēc perioda un priekšmeta.
+Pievienot kopsavilkumu par izvēlēto periodu: apmeklētās, kavētās stundas un nokavējumi, ja šie dati jau tiek uzskaitīti.
+Uzspiežot uz ieraksta, parādīt konkrētās stundas informāciju.
+Sakārtot ielādes, tukša saraksta un kļūdas stāvokļus.
+Nodrošināt lietojamu skatu telefonā un datorā. Kritiskās vietas — ko nedrīkst sabojāt:
+Skolēns drīkst redzēt tikai savus datus. Serverim lietotājs jānosaka pēc sesijas; ar klienta studentId pārbaudi nepietiek.
+Mainot URL vai pieprasījuma parametrus, nedrīkst iegūt cita skolēna vēsturi.
+Nākotnes vai vēl nepabeigta stunda nedrīkst kļūt par kavējumu tikai tāpēc, ka skolēns vēl nav atzīmējies.
+Jāizmanto esošās statusu definīcijas. Nedrīkst patvaļīgi pielīdzināt nokavēšanu pilnīgam kavējumam.
+Pārstundas un atsevišķas mācību stundas nedrīkst uzskaitīt dubultā.
+Kopsavilkumam jāsakrīt ar izvēlētajiem filtriem, arī tad, ja sarakstam ir lapošana.
+Šis ir apskates uzdevums — nedrīkst nejauši ieviest skolēnam iespēju mainīt savu apmeklējumu.
+Jāsaglabā esošā obligātās atzīmēšanās popup darbība.
+Darbs ir pabeigts, kad: skolēns saprot savu apmeklējumu, filtri un skaitļi sakrīt, skats darbojas mobilajā ierīcē un pārbaudīta piekļuves izolācija starp diviem skolēniem.
